@@ -1,0 +1,32 @@
+h1 {
+  padding: 20px;
+  color: radial-gradient(rgba(47, 253, 20, 0.8), rgba(0, 17, 255, 0.589));
+  background: radial-gradient(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.589));
+  text-align: center;
+  font-family: "Russo One", sans-serif;
+}
+
+.sub-header {
+  padding: 5px;
+  color: rgb(60, 33, 122);
+  font-size: 20px;
+  font-weight: 800;
+  justify-content: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  color: rgb(60, 33, 122);
+  border-radius: 8px;
+  background-color: rgb(184, 184, 184);
+  margin-bottom: 8px;
+}
+button:hover {
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 17, 0);
+  font-weight: 800;
+}
+.bold {
+  text-transform: uppercase;
+}
