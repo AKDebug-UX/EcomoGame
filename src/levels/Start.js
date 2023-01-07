@@ -1,16 +1,10 @@
-import {BrowserRouter as Router, useHistory} from "react-router-dom";
-
+import {useNavigate} from "react-router-dom";
 import { useState } from "react";
 
-// A function that authenticates the users
 
 function authenticateUser(userName, password) {
 
-// Some code to authenticate the user
-
 }
-
-// Hooks must be used inside a functional component
 
 export default function Login(props) {
 
@@ -20,34 +14,13 @@ export default function Login(props) {
 
   const [password, setPassword] = useState("");
 
-  
+  const navigate = useNavigate();
 
-  // Accessing the history instance created by React
-
-  const history = useHistory();
-
-  
-
-  // Handle the user clicks the login button
-
-  const handleClick = () => {
-
-    // Authenticate the user
-
-    authenticateUser(userName, password);
-
-    // When the authentication is done
-
-    // Redirect the user to the /profile/${userName} page
-
-    // the below code adds the /profile/${userName} page
-
-    // to the history stack.
-
-    history.push(` /profile/${userName} `);
-
-  };
-
+    const handleClick = (location) => {
+      console.log(location);
+      navigate(location);
+      authenticateUser(userName, password)
+    };
   
 
   return (
@@ -63,9 +36,9 @@ export default function Login(props) {
             }}   required
       />
 
-      <button type="submit" onClick={handleClick}>
-                  {" "}
-            Log In{""}
+      <button type="submit" onClick={() => handleClick("/stage1")}>
+                  
+            Log In
       </button>
 
     </div>

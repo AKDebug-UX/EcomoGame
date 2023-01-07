@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import uniqueCardsArray from "../data.js";
+import uniqueCardsArray from "../../src/components/Stage1/data";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../components/Header";
 import { Col, Container, Row } from "react-bootstrap";
-import Card from "../components/Card";
-import Finish from "../components/Finish/Index.js";
+import Card from "../components/Stage1/Card/index";
+import Finish from "../components/Stage1/Finish/Index";
 
 
 // FisherYates Modern Shuffle Algorithm

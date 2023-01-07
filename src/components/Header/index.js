@@ -6,7 +6,7 @@ import { FaRedo } from "react-icons/fa";
 const Header = ({ moves, bestScore, handleRestart }) => {
   return (
     <div>
-      <h1>Ecomo Game</h1>
+      <h1>Ecomo Game 🧩</h1>
       <Container>
         <div className="sub-header">
           <div className="moves">
