@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import uniqueCardsArray from "../data.js";
+import uniqueCardsArray from "../../src/components/Stage2/data";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "../components/Header";
 import { Col, Container, Row } from "react-bootstrap";
-import Card from "../components/Card";
-import Finish from "../components/Finish/Index.js";
+import Card from "../components/Stage2/Card/index";
+import Finish from "../components/Stage2/Finish/Index";
 
 
 // FisherYates Modern Shuffle Algorithm
@@ -15,9 +15,9 @@ function swap(array, i, j) {
 }
 function shuffleCards(array) {
   const length = array.length;
-  for (let i = length; i > 2; i--) {
+  for (let i = length; i > 0; i--) {
     const randomIndex = Math.floor(Math.random() * i);
-    const currentIndex = i - 0.5;
+    const currentIndex = i - 1;
     swap(array, currentIndex, randomIndex);
   }
   return array;
@@ -25,7 +25,7 @@ function shuffleCards(array) {
 
 const App = () => {
   const [cards, setCards] = useState(() =>
-    shuffleCards(uniqueCardsArray.concat(uniqueCardsArray.concat(uniqueCardsArray)))
+    shuffleCards(uniqueCardsArray.concat(uniqueCardsArray))
   );
   const [openCards, setOpencards] = useState([]);
   const [matchedCards, setMatchedcards] = useState({});
@@ -55,10 +55,10 @@ const App = () => {
   };
 
   const evaluate = () => {
-    const [first, second, third] = openCards;
+    const [first, second] = openCards;
     enable();
-    if (cards[first === second].type === cards[third].type) {
-      setMatchedcards((prev) => ({ ...prev, [cards[first === second].type]: true }));
+    if (cards[first].type === cards[second].type) {
+      setMatchedcards((prev) => ({ ...prev, [cards[first].type]: true }));
       setOpencards([]);
       // alert("you have found a match");
       return;
@@ -70,7 +70,7 @@ const App = () => {
 
   const handleCardClick = (index) => {
     if (openCards.length === 1) {
-      setOpencards((prev) => [...prev,  index]);
+      setOpencards((prev) => [...prev, index]);
       setMoves((moves) => moves + 1);
       disable();
     } else {
@@ -80,7 +80,7 @@ const App = () => {
   };
   useEffect(() => {
     let timeout = null;
-    if (openCards.length === 1) {
+    if (openCards.length === 2) {
       timeout = setTimeout(evaluate, 300);
     }
     return () => {
@@ -107,7 +107,7 @@ const App = () => {
     setShowModal(false);
     setMoves(0);
     setShouldDisableAllCards(false);
-    setCards(shuffleCards(uniqueCardsArray.concat(uniqueCardsArray)(uniqueCardsArray)));
+    setCards(shuffleCards(uniqueCardsArray.concat(uniqueCardsArray)));
   };
 
   return (
@@ -118,12 +118,13 @@ const App = () => {
         bestScore={bestScore}
         handleRestart={handleRestart}
       />
+      
       <Container>
         <h5>STAGE: TWO(2)</h5>
         <Row>
           {cards.map((card, index) => {
             return (
-              <Col xs={6} md={4} lg={2}>
+              <Col xs={4} md={3} lg={2}>
                 <Card
                   key={index}
                   card={card}
