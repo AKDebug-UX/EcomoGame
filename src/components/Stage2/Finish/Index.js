@@ -6,14 +6,16 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import "./style.css";
-import { Link, Router } from "react-router-dom";
-// import Stage2 from "../../levels/Stage2";
-// BrowserRouter as Router, Route,
+import { useNavigate } from "react-router-dom";
 
 
 
 const Finish = ({ handleRestart, showModal, bestScore, moves }) => {
- 
+  let navigate = useNavigate();
+  const handleClick = (location) => {
+    console.log(location);
+    navigate(location);
+  };
   return (
     <div>
       
@@ -35,9 +37,7 @@ const Finish = ({ handleRestart, showModal, bestScore, moves }) => {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleRestart} color="primary">Restart </Button>
-          {/* <Router>
-            <Link to='/Stage2'>Next Stage</Link>
-          </Router> */}
+          <Button onClick={() => handleClick("/stage2")} color="primary">Next Stage</Button>
         </DialogActions>
       </Dialog>
     </div>
