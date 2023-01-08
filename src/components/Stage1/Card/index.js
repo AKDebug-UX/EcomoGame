@@ -1,6 +1,6 @@
 import React from "react";
-import "./style.css";
-import backpic from "../../image/backpic.jpg";
+import "./styled.css";
+import backpic from "../../../image/backpic.jpg";
 // import frontpic from "../../image/bird1.jpg";
 import classnames from "classnames";
 
