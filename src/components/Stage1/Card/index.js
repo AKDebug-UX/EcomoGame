@@ -1,5 +1,5 @@
 import React from "react";
-import "./styled.css";
+import "./card.css";
 import backpic from "../../../image/backpic.jpg";
 // import frontpic from "../../image/bird1.jpg";
 import classnames from "classnames";

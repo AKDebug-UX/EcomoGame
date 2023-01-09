@@ -65,7 +65,7 @@ const App = () => {
     }
     timeout.current = setTimeout(() => {
       setOpencards([]);
-    }, 500);
+    }, 300);
   };
 
   const handleCardClick = (index) => {

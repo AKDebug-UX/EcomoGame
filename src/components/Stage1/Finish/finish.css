@@ -1,19 +1,12 @@
 .MuiDialog-paperWidthSm {
   max-width: null !important;
   width: 80% !important;
-  /* background-color: rgb(142, 208, 212) !important; */
-  background: radial-gradient(
-    rgb(136, 255, 229) 60%,
-    rgba(243, 243, 56, 0.664)
-  );
-
+  background-color: rgb(142, 208, 212) !important; 
+  background: radial-gradient(rgba(255, 128, 0, 0.7), rgb(7, 56, 214));
   border-radius: 30px !important;
   text-align: center;
 }
-h2 {
-  color: rgb(255, 0, 221) !important;
-  margin-top: 15px;
-}
+
 .MuiDialogContentText-root {
   font-size: 20px !important;
 }

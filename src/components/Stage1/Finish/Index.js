@@ -5,7 +5,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import "./style.css";
+import "./finish.css";
 import { useNavigate } from "react-router-dom";
 
 
@@ -26,9 +26,11 @@ const Finish = ({ handleRestart, showModal, bestScore, moves }) => {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <h2>Ecomo Game</h2>
+        <div className="Ecomo">
+          <p className="Ecomog">EcomoGame</p>
+      </div>
         <DialogTitle id="alert-dialog-title">
-          Hurray !!! You completed the Ecomo Game  !!
+          Hurray !!! You completed the EcomoGame Stage 1 !!
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">

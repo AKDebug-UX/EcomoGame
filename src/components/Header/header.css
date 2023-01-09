@@ -1,11 +1,30 @@
-h1 {
+.Ecomo {
   padding: 20px;
   color: radial-gradient(rgba(47, 253, 20, 0.8), rgba(0, 17, 255, 0.589));
-  background: radial-gradient(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.589));
+  background: radial-gradient(rgba(255, 128, 0, 0.7), rgb(7, 56, 214));
   text-align: center;
   font-family: "Russo One", sans-serif;
-}
 
+}
+.Ecomog {
+  display: absolute;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3em;
+  font-family: arial;
+  font-weight: 500;
+  transform: scale(.10);
+  color: #121212;
+  -webkit-text-stroke: 2px gray;
+}
+.Ecomog:nth-child(1) {
+  animation: var(--effect) .1000s;
+}
+@keyframes hover {
+
+
+
+}
 .sub-header {
   padding: 5px;
   color: rgb(60, 33, 122);

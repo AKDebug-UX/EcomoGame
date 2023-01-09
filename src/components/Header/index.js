@@ -1,12 +1,15 @@
 import React from "react";
-import "./style.css";
+import "./header.css";
 import { Container } from "react-bootstrap";
 import { FaRedo } from "react-icons/fa";
 
 const Header = ({ moves, bestScore, handleRestart }) => {
   return (
     <div>
-      <h1>Ecomo Game 🧩</h1>
+      <div className="Ecomo">
+          <p className="Ecomog">EcomoGame</p>
+      </div>
+      <br/><br/>
       <Container>
         <div className="sub-header">
           <div className="moves">

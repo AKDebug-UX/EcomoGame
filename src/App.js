@@ -9,18 +9,6 @@ import Stage2 from "./levels/Stage2";
 import MessagePopup from "../src/lib/MessagePopup";
 import "./App.css";
 
-const useStyles = makeStyles((theme) => ({
-  body: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    minHeight: "98vh",
-    paddingTop: "64px",
-    boxSizing: "border-box",
-    width: "100%",
-  },
-}));
 
 export const SetPopupContext = createContext();
 
@@ -33,7 +21,6 @@ const App = () => {
     }, 4000);
   }, []);
 
-  const classes = useStyles();
   const [popup, setPopup] = useState({
     open: false,
     severity: "",
@@ -51,7 +38,7 @@ const App = () => {
         <SetPopupContext.Provider value={setPopup}>
           <Grid container direction="column">
             <Grid item xs></Grid>
-            <Grid item className={classes.body}>
+            <Grid item>
               <Routes>
                 <Route exact path="/" element={<Onboarding />} />
                 <Route exact path="/start" element={<Start />} />
