@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish="path-to-EcomoGame/build"
+  base = "path-to-EcomoGame"
+  
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
